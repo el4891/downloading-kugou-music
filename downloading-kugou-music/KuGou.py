@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import requests
 import json
@@ -107,6 +108,6 @@ class KuGou(object):
 
 
 if __name__ == '__main__':
-    search_music = input(u"请输入歌手或歌名：")
+    search_music = input("请输入歌手或歌名：")
     kugou_music = KuGou(search_music)
     kugou_music.run()

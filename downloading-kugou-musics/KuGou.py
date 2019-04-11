@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 import requests
 import json
@@ -26,7 +27,7 @@ class KuGou(object):
         music_name += ".mp3"
         with open(path + music_name, "wb") as f:
             f.write(music)
-            print(u"%s下载成功" % music_name)
+            print("%s下载成功" % music_name)
 
     def handle_json_data(self, json_data, flag):
         json_to_dict = json.loads(json_data)
@@ -58,12 +59,12 @@ class KuGou(object):
             print("%d %s" % (index, music['music_name']))
 
         try:
-            download_choice = raw_input(u"请选择你要下载的歌曲[如：1，2，3或输入all全部下载]: ")
+            download_choice = raw_input("请选择你要下载的歌曲[如：1，2，3或输入all全部下载]: ")
             if download_choice == "all":
                 return musics_lists
             else:
                 download_choice_list = download_choice.split(",")
-                print(u"你选中的歌曲：")
+                print("你选中的歌曲：")
                 for download_index in download_choice_list:
                     music_info = musics_lists[int(download_index) - 1]
                     download_list.append(music_info)
@@ -110,6 +111,6 @@ class KuGou(object):
 
 
 if __name__ == '__main__':
-    search_music = raw_input(u"请输入歌手或歌名：")
+    search_music = raw_input("请输入歌手或歌名：")
     kugou_music = KuGou(search_music)
     kugou_music.run()
